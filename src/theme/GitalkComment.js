@@ -7,7 +7,7 @@ class GitalkComment extends Component{
     var gitalk = new Gitalk({
       clientID: 'ed6ebee4627e4d461d98',
       clientSecret: 'a1eaaa5038782e9a20cc716382b4b7119ba784e1',
-      repo: 'SUSTech-CANStudio.github.io',  // 仓库名称
+      repo: 'home-page',  // 仓库名称
       owner: 'SUSTech-CANStudio',      // 仓库作者
       admin: ['airine'],
       id: location.pathname,      // Ensure uniqueness and length less than 50
