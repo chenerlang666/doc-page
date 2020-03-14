@@ -1,17 +1,17 @@
 module.exports = {
-  title: 'CAN Studio',
-  tagline: 'We can code a can like a can canner can a can.', // one sentence description
-  url: 'https://SUSTech-CANStudio.github.io',
+  title: '一口闰心',
+  tagline: 'A scientific programmer who dreams of becoming a great product manager.', // one sentence description
+  url: 'https://blog.aaron-xin.tech',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
-  organizationName: 'SUSTech-CANStudio', // Usually your GitHub org/user name.
-  projectName: 'SUSTech-CANStudio.github.io', // Usually your repo name.
+  organizationName: 'airine', // Usually your GitHub org/user name.
+  projectName: 'airine.github.io', // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'CAN Studio',
       logo: {
         alt: 'SUSTech CANStudio Logo',
         src: 'img/logo.svg',
+        srcDark: 'img/logo_dark.svg'
       },
       links: [
         {
@@ -27,7 +27,7 @@ module.exports = {
           position: 'right',
         },
         {
-          href: 'https://github.com/SUSTech-CANStudio/',
+          href: 'https://github.com/airine/',
           label: 'GitHub',
           position: 'right',
         },
@@ -46,12 +46,16 @@ module.exports = {
           ],
         },
         {
-          title: 'Community',
+          title: 'Organizations',
           items: [
             {
-              label: 'Slack channel',
-              href: 'https://canstudio-r.slack.com',
+              label: 'CAN Studio',
+              href: 'https://SUSTech-CANStudio.github.io',
             },
+            {
+              label: 'SUSTech',
+              href: 'https://www.sustech.edu.cn'
+            }
           ],
         },
         {
@@ -63,12 +67,12 @@ module.exports = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/SUSTech-CANStudio',
+              href: 'https://github.com/airine',
             }
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} CAN Studio @SUSTech`,
+      copyright: `Copyright © ${new Date().getFullYear()} 一口闰心`,
     },
   },
   presets: [
@@ -78,7 +82,7 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
-            'https://github.com/SUSTech-CANStudio/home-page/edit/master/',
+            'https://github.com/airine/home-page/edit/master/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

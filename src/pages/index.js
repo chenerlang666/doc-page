@@ -64,7 +64,7 @@ function Home() {
       description="Description will go into a meta tag in <head />">
       <header className={classnames('hero hero--primary', styles.heroBanner)}>
         <div className="container">
-          <img src="img/can.png"></img>
+          {/* <img src="img/my.logo.png"></img> */}
           <h1 className="hero__title">{siteConfig.title}</h1>
           <p className="hero__subtitle">{siteConfig.tagline}</p>
           <div className={styles.buttons}>
@@ -74,7 +74,7 @@ function Home() {
                 styles.getStarted,
               )}
               to={useBaseUrl('docs/manual')}>
-              Read Us
+              Read Me
             </Link>
           </div>
         </div>
