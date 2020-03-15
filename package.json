@@ -9,12 +9,15 @@
     "deploy": "docusaurus deploy"
   },
   "dependencies": {
+    "@charlietango/use-script": "^2.1.0",
     "@docusaurus/core": "^2.0.0-alpha.48",
     "@docusaurus/preset-classic": "^2.0.0-alpha.48",
     "classnames": "^2.2.6",
     "gitalk": "^1.6.2",
     "react": "^16.8.4",
-    "react-dom": "^16.8.4"
+    "react-avatar": "^3.9.2",
+    "react-dom": "^16.8.4",
+    "react-load-script": "^0.0.6"
   },
   "browserslist": {
     "production": [
@@ -27,5 +30,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "node-sass": "^4.13.1"
   }
 }

@@ -22,8 +22,13 @@ module.exports = {
         },
         {to: 'blog', label: 'Blog', position: 'left'},
         {
-          to: 'docs/manual', 
-          label: 'Team Manual', 
+          href: 'https://www.notion.so/Notion-notes-41a54e26bd18461e87b6fabdfa26d43b',
+          label: 'Notion',
+          position: 'left',
+        },
+        {
+          to: 'docs/about', 
+          label: 'About', 
           position: 'right',
         },
         {
@@ -40,21 +45,28 @@ module.exports = {
           title: 'Docs',
           items: [
             {
-              label: 'Team Manual',
-              to: 'docs/manual',
+              label: 'About',
+              to: 'docs/about',
             },
+            {
+              label: 'Notion',
+              href: 'https://www.notion.so/Notion-notes-41a54e26bd18461e87b6fabdfa26d43b',
+            }
           ],
         },
         {
           title: 'Organizations',
           items: [
             {
+              label: 'SUSTech',
+              href: 'https://www.sustech.edu.cn'
+            },
+            {
               label: 'CAN Studio',
               href: 'https://SUSTech-CANStudio.github.io',
             },
             {
-              label: 'SUSTech',
-              href: 'https://www.sustech.edu.cn'
+              label: 'Citric Acid Network Technology Co.,Ltd.'
             }
           ],
         },
