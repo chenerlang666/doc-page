@@ -1,11 +1,11 @@
 module.exports = {
   title: '一口闰心',
   tagline: 'A scientific programmer who dreams of becoming a great product manager.', // one sentence description
-  url: 'https://blog.aaron-xin.tech',
+  url: 'https://Airine.github.io',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
-  organizationName: 'airine', // Usually your GitHub org/user name.
-  projectName: 'airine.github.io', // Usually your repo name.
+  organizationName: 'Airine', // Usually your GitHub org/user name.
+  projectName: 'Airine.github.io', // Usually your repo name.
   themeConfig: {
     navbar: {
       logo: {
