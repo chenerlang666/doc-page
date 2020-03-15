@@ -66,7 +66,8 @@ module.exports = {
               href: 'https://SUSTech-CANStudio.github.io',
             },
             {
-              label: 'Citric Acid Network Technology Co.,Ltd.'
+              label: 'Citric Acid Network Technology Co.,Ltd.',
+              href: 'https://SUSTech-CANStudio.github.io',
             }
           ],
         },

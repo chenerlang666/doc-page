@@ -14,7 +14,13 @@ const features = [
     imageUrl: 'img/schools/168_logo.png',
     description: (
       <>
-        <a href="http://www.hf168.net/Home/NewIndex">合肥一六八中学</a>创办于2002年，是一所年轻而充满活力、享誉省内外的现代化寄宿制学校，隶属合肥市教育局。占地300亩，13.6644万平米。布局合理，环境优美，设计理念新，分区科学，设施一流。
+        <a href="http://www.hf168.net/Home/NewIndex">合肥一六八中学</a>创办于2002年，是一所年轻而充满活力、享誉省内外的现代化寄宿制学校，隶属合肥市教育局。占地300亩，13.6644万平米。布局合理，环境优美，设计理念新，分区科学，设施一流。<br/>
+        <div style={{'text-align':'center','font-style':'italic'}}>
+        <br/> 以诚以坚，惟志惟勤。<br/>
+        <br/> 择善修身，立学济世。<br/>
+        <br/> 乐道守正，励行致远。<br/>
+        <br/> 博学笃志，切问近思。<br/>
+        </div>
       </>
     ),
   },
