@@ -8,23 +8,29 @@ author_image_url: https://avatars0.githubusercontent.com/u/21023948?s=400&u=e58f
 tags: [java, IO]
 ---
 
- ## Java IO stream classification
+ # Java IO stream classification
 
- ### Classify by IO type
+ ## Classify by IO type
+
  1. Input:
+
     - InputStream
     - Reader
 
  2. Output:
+
     - OutputStream
     - Writer
 
- ### Classify by stream type
+ ## Classify by stream type
+ 
  1. Byte stream
+
     - InputStream
     - OutputStream
 
  2. Char stream
+
     - Reader
     - Writer
 
@@ -32,7 +38,7 @@ tags: [java, IO]
 
 ---
 
- `Input/OuputStream` and `Reader/Writer` are the basic superclass of Java IO streams which are all abstract.
+`Input/OuputStream` and `Reader/Writer` are the basic superclass of Java IO streams which are all abstract.
 
  [![Java_IO_Stream.png](https://i.loli.net/2019/02/22/5c6fa0e742bdf.png)](https://i.loli.net/2019/02/22/5c6fa0e742bdf.png)
 
@@ -42,7 +48,9 @@ tags: [java, IO]
 
  1. InputStream
 
-    ```java
+    
+
+``` java
     private static void readByteFromFile(String fileName) throws IOException {
         // Read from file byte by byte.
 
@@ -73,7 +81,9 @@ tags: [java, IO]
 
  2. Reader
 
-    ```java
+    
+
+``` java
     private static void readCharFromFile(String fileName) throws IOException{
         // Read from file char by char
 
@@ -93,9 +103,11 @@ tags: [java, IO]
     }
     ```
 
- 3. main(String args[])
+ 3.main(String args[])
 
-    ```java
+    
+
+``` java
     public static void main(String[] args) {
         String fileName = "src/流浪地球_utf8.txt";
         long startTime = System.currentTimeMillis();
@@ -131,7 +143,9 @@ tags: [java, IO]
 
  1. OutputStream
 
-    ```java
+    
+
+``` java
     private static void writeByteToFile(String hello) throws IOException{
         byte[] byteArray = hello.getBytes();
         File file = new File("src/outputStream.txt");
@@ -144,7 +158,9 @@ tags: [java, IO]
 
  2. Writer
 
-    ```java
+    
+
+``` java
     private static FileWriter writeCharToFile(String hello, Boolean flush) throws IOException {
         File file = new File("src/writer.txt");
         Writer os = new FileWriter(file);
@@ -156,9 +172,11 @@ tags: [java, IO]
     }
     ```
 
- 3. main(String args[])
+ 3.main(String args[])
 
-    ```java
+    
+
+``` java
     public static void main(String args[]){
         String hello = "hello word!";
         //boolean flush = true;
@@ -184,14 +202,14 @@ tags: [java, IO]
     }
     ```
 
- From this example, if we assign `false` to variable `flush` and run the program, before enter anything in the console,
- we will find two different files in `src`. One is 'outputStream.txt' with file content "hello word!", the other is
+ From this example, if we assign `false` to variable `flush` and run the program, before enter anything in the console, 
+ we will find two different files in `src` . One is 'outputStream.txt' with file content "hello word!", the other is
  'writer.txt' with empty content.
 
  It is because that the `Writer` need to convert bytes it read from a file and buffer them char by char into the memory
  in specified codeset to implement the function 'stream by character'. And the `Writer` would flush the buffer to
  output destination only when the buffer is full or the flush function is invoked.
- <br>
+
  The default size of java stream buffer is 8192 bytes.
 
 ---
@@ -206,7 +224,9 @@ tags: [java, IO]
 
  1. Buffered byte stream
 
-    ```java
+    
+
+``` java
     private static void copyFileByByte(String fileName, boolean buffered) throws IOException {
         // Copy file byte by byte using byte IO stream.
         File file = new File(fileName);
@@ -231,7 +251,9 @@ tags: [java, IO]
 
  2. Buffered char stream
 
-    ```java
+    
+
+``` java
     private static void copyFileByChar(String fileName, boolean buffered) throws IOException {
         // Copy file char by char using char IO stream.
         File file = new File(fileName);
@@ -262,9 +284,11 @@ tags: [java, IO]
     }
     ```
 
- 3. main(String args[])
+ 3.main(String args[])
 
-    ```java
+    
+
+``` java
     public static void main(String[] args) {
         String fileName = "src/流浪地球_utf8.txt";
         boolean buffered = false;
@@ -295,7 +319,9 @@ tags: [java, IO]
 
  Output:
 
-    ```
+    
+
+``` 
     Non-buffered:
     1 byte stream
         -----------------------------------------------------------
@@ -337,7 +363,9 @@ tags: [java, IO]
 
  Additionally, the `InputStream` and `OutStream` can be converted to `Reader` and `Writer` by codes below.
 
- ```java
+ 
+
+``` java
  // Input
  InputStream is = new FileInputStream(file);
  Reader reader = new InputStreamReader(is);
@@ -349,7 +377,9 @@ tags: [java, IO]
 
  Demo
 
- ```java
+ 
+
+``` java
  import java.io.*;
 
  public class StreamConvertDemo {
@@ -386,11 +416,15 @@ tags: [java, IO]
  }
  ```
 
- Question: Can `Reader` and `Writer` be converted to `InputStream` and `OutputStream`?
+ Question: Can `Reader` and `Writer` be converted to `InputStream` and `OutputStream` ?
 
- Answer: No. <br>Why? Let's analyze the source code definition of these four classes.
+ Answer: No.
+ 
+ Why? Let's analyze the source code definition of these four classes.
 
- ```java
+ 
+
+``` java
  // Input
  public abstract class InputStream implements Closeable {}
  public abstract class Reader implements Readable, Closeable {}
@@ -399,12 +433,13 @@ tags: [java, IO]
  public abstract class Writer implements Appendable, Closeable, Flushable {}
  ```
 
- As can be seen from the upper code, to be converted to `Reader` or `Writer`, the `InputStream` and `OutputStream`
- implement a more interface `Readable` or `Appendable`. This process is an addition. But for `Reader` and `Writer` to
- become `Input/OutputStream`, it needs interface subtraction which is impossible.
+ As can be seen from the upper code, to be converted to `Reader` or `Writer` , the `InputStream` and `OutputStream` 
+ implement a more interface `Readable` or `Appendable` . This process is an addition. But for `Reader` and `Writer` to
+ become `Input/OutputStream` , it needs interface subtraction which is impossible.
 
  Source code: https://github.com/Airine/Java-IO-Stream-Testing
 
 ---
  ## Reference
- 1. https://blog.csdn.net/wangzhongshun/article/details/78595228
+ 1.https://blog.csdn.net/wangzhongshun/article/details/78595228
+
