@@ -8,7 +8,12 @@ author_image_url: https://avatars0.githubusercontent.com/u/21023948?s=400&u=e58f
 tags: [java, IO]
 ---
 
- # Java IO stream classification
+# Java IO stream classification
+
+1. Classify by IO type
+2. Classify by stream type
+
+<!--truncate-->
 
  ## Classify by IO type
 
