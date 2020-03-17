@@ -1,27 +1,185 @@
 ---
 id: project2
-title: Folding At Home Server
+title: Where is Waldo?
 ---
 
-# 部署流程
+| [Github](https://github.com/Airine/CS4243-Project) | Docs | ~~Visualization~~ | 2019-11 |
+| :-: | :-: | :-: | :-:|
 
-1. 安装 PHP7
+# CS4243 Project
 
-2. 打开`src/`, 将`config-sample.php`的内容复制，新建文件`config.php`，将复制的内容粘贴进去并保存。
-   1. 所有的配置都在`config.php`
-   2. `config.php`已经被添加进`.gitignore`
-3. 设置`config.php`
-   1. `BASE_URL`为存放index.php的目录，例如http://localhost/folding-at-SUSTech-server/src
-   2. `LANGUAGE`为默认语言，其他无需设置
-4. 访问 <BASE_URL>/index.php
+This repository contains different ML approaches to the Where is Waldo problem.
 
-# 其他配置
-1. `php.ini`：将`extension=php_sqlite3.dll`和`extension=pdo_sqlite`取消注释
+## Cascade Classifier
 
----
+Content under folder `cascadeclassifier`
 
-The server for [Folding At SUSTech](/docs/project1).
+### Detection
 
-Document [link]
+Execute the command 
+```
+python detector.py <classifier> <image> <3_digit_image_idx> <output_path>
+```
+*Note: Classifier can be found in `classifier/`.*
 
-Github [link]
+
+### Training
+
+Download the executables from [here](https://s3.ap-south-1.amazonaws.com/mediumarticlebucketclassifer/OpenCV_Dependencies.rar) and extract it into `cascadeclassifier\` 
+
+1) Create bg.txt (negative examples)
+```
+python generate_bg.py <folder_with_neg_egs>
+```
+
+*Note: `bg.txt` can be appended by executing `generate_bg.py` on multiple negatives folders.*
+
+2) Create waldo.vec (positive examples)
+```
+python generate_info.py <folder_with_pos_egs>  // for additional training images
+
+python generate_info_xml.py  // for xml annonations provided by course
+
+opencv_createsamples -info info.dat -num <#_pos_egs> -w 50 -h 50 -vec waldo.vec
+```
+
+*Note: `bg.txt` can be appended by executing `generate_bg.py` on multiple negatives folders.*
+
+3) Train cascade
+```
+opencv_traincascade -data classifier -vec waldo.vec -bg bg.txt -numPos <#_pos_egs> -numNeg <#_neg_egs> -numStages 50 -w 50 -h 50
+```
+
+*Code adapted from (https://github.com/CrzyDataScience/WhereIsWally)*
+
+## HOG SVM Detector
+
+Content under folder `hog_svm`
+
+### Detection
+
+For sklearn version, execute the command 
+```
+python test_HOG_SVM.py
+```
+
+For OpenCV version, execute the command
+```
+python OpenCV_test_HOG_SVM.py
+```
+
+### Training
+
+For sklearn version, execute the command 
+```
+python train_HOG_SVM.py
+```
+
+For OpenCV version, execute the command
+```
+python OpenCV_train_HOG_SVM.py
+```
+
+*Code adapted from (https://github.com/SamPlvs/Object-detection-via-HOG-SVM)*
+
+## Template Matching
+
+### Pure template matching
+
+```
+python pure_tm.py -t <template folder> -i <3_digit_image_idx>
+```
+
+Output image would be in `template_matching/results` folder
+
+### Scoring the result from cascade classifier
+
+```
+python base_line_scoring.py -t <template folder> -i <3_digit_image_idx>
+```
+
+This script takes `template_matching/baseline.txt` as input and would output a csv file to `template_matching/baseline`.
+
+Inside `baseline` folder:
+
+```
+python baseline2result.py -b <baseline_csv_file>
+```
+
+This script converts baseline csv file to actual baseline.txt file.
+
+## Official Training for Cascade Classifier
+
+*Note: k = 2 for cross-validation.*
+
+### Generate data required for training
+
+```
+python data_generator.py
+```
+
+No arguments needed. Only needed to generate once.
+A `data` folder will be created, which will contain all the necessary training files/data needed.
+
+Folder structure: `data -> k_idx -> character -> body_part -> bg/info files`
+
+### Training
+
+```
+python trainer.py -w <width> -bt <booster> -minHitRate <minHitRate> -maxFalseAlarmRate <maxFalseAlarmRate> -mode <mode>
+```
+
+One execution will train for all characters and body parts.
+The trainer will train for numStages = 17.
+A `trained_models` folder will be created, which will contain all the trained models.
+`numPos` is specific for stage 0. For subsequent stages, more postive examples will be consumed.
+`numPos` and `numNeg` will be automatically calculated based on the examples we have.
+
+Folder structure: `trained_models -> parameters -> k_idx -> character -> body_part -> cascade.xml`
+*Note: parameters format for folder name is `w_bt_minHitRate_maxFalseAlarmRate_mode`*
+
+### Validation
+
+```
+python validator.py
+```
+
+Validator will generate and evaluate baselines for all models contained in the `trained_models` folder
+The validator will evaluate for numStages=10 to 17.
+A `baseline` folder will be created, which will contain all the baselines.
+A `eval.txt` file will be generated which contains the average mAP for all the models (aggregated according to training parameters).
+
+Folder structure: `baseline -> parameters -> k_idx -> waldo.txt + wenda.txt + wizard.txt`
+
+## Ensemble Detector
+
+```
+python ensemble_detector.py -ii <image input text file>
+python ensemble_detector_visualizer.py -ip <single input image path>
+```
+
+Ensemble detector will execute the two-stage detection and outputs to the corresponding baseline files.
+Baselines are stored in the `baseline` folder.
+Templates are stored in the `template` folder.
+Cascade classifier models are stored in the `classifier` folder.
+Format for each line in image input text file: `path\to\image img_idx`
+
+## References
+- Training examples derived from (https://github.com/vc1492a/Hey-Waldo)
+- [OpenCV's tutorial](https://docs.opencv.org/trunk/dc/d88/tutorial_traincascade.html)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

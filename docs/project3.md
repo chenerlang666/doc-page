@@ -3,6 +3,11 @@ id: project3
 title: project-with-docs
 ---
 
+| [Github](https://github.com/Airine/project-with-docs) | Docs | 2020-03 |
+| :-: | :-: | :-: |
+
+<br/>
+
 为了规范化每个项目的文档，创建了`project-with-docs`这个仓库，新创建的项目可以选择使用这个模板。模板本身也需要不断完善。
 
 ## 文档
@@ -29,9 +34,3 @@ cd docs
 # Need Help (TODO)
 
 目前，文档的目录结构并不完善，仍用docusaurus的template。如果你使用这个template完成了一个完整的项目，请借鉴你的文档结构完善这个template。
-
----
-
-Document [link](https://sustech-canstudio.github.io/project-with-docs/)
-
-Github [link](https://github.com/SUSTech-CANStudio/project-with-docs/)
