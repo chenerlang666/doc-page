@@ -3,7 +3,7 @@ id: project2
 title: Where is Waldo?
 ---
 
-| [Github](https://github.com/Airine/CS4243-Project) | Docs | ~~Visualization~~ | 2019-11 |
+| [Github](https://github.com/Airine/CS4243-Project) | [Docs](https://github.com/Airine/home-page/raw/master/docs/img/A0161868R_A0209160N_A0155677N_report.pdf) | ~~Visualization~~ | 2019-11 |
 | :-: | :-: | :-: | :-:|
 
 # CS4243 Project
