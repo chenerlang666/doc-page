@@ -27,7 +27,7 @@ module.exports = {
           position: 'left',
         },
         {
-          to: 'docs/about', 
+          href: 'https://blog.aaron-xin.tech/about/',
           label: 'About', 
           position: 'right',
         },
@@ -46,7 +46,7 @@ module.exports = {
           items: [
             {
               label: 'About',
-              to: 'docs/about',
+              href: 'https://blog.aaron-xin.tech/about/',
             },
             {
               label: 'Notion',
