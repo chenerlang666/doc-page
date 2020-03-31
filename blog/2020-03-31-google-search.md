@@ -37,13 +37,13 @@ site:<your-websit-url> # site:blog.aaron-xin.tech
 
 ### 如果没有被收录
 
-![没有被收录应该显示的图片](img/google/not_include.png)
+![没有被收录应该显示的图片](/img/google/not_include.png)
 
 很遗憾，你的网站没有被谷歌收录。没关系，做完下面的步骤，在30分钟左右，就可以通过Google搜索到你网站的内容了。
 
 ### 如果已经被收录
 
-![已经被收录应该显示的图片](img/google/included.png)
+![已经被收录应该显示的图片](/img/google/included.png)
 
 恭喜你，你的网站已经被谷歌收录。但是出于可控考虑，你仍可以继续看下面的步骤，证明你的所有权以及提高Google对你的网站的检索效率。
 
@@ -55,11 +55,11 @@ site:<your-websit-url> # site:blog.aaron-xin.tech
 
 import Img from 'react-image'
 
-<Img src="img/google/gsc_add_res.png" width="200"/>
+<Img src="/img/google/gsc_add_res.png" width="200"/>
 
 2. 建议选择右边的网址前缀
 
-<Img src="img/google/choose_res.png" width="600"/>
+<Img src="/img/google/choose_res.png" width="600"/>
 
 3. 建议选择HTML文件验证方法
 
@@ -77,7 +77,7 @@ import Img from 'react-image'
 
 成功以后会显示
 
-<Img src="img/google/success_res.png" width="500"/>
+<Img src="/img/google/success_res.png" width="500"/>
 
 ## 3.添加Sitemaps给爬虫加个速[👇](google-search#4手动请求（重新索引）)
 
@@ -106,29 +106,106 @@ Sitemaps是什么？[站点地图](https://support.google.com/webmasters/answer/
 
 1. 点击进入[XML-Sitemaps.com](https://www.xml-sitemaps.com)，输入个人网站地址，点击start。
 
-![sitemaps-index](img/google/sitemaps-index.png)
+![sitemaps-index](/img/google/sitemaps-index.png)
 
 2. 等待搜索完成
 
-![sitemaps](img/google/sitemaps.png)
+![sitemaps](/img/google/sitemaps.png)
 
 预览一下：
 
-![sitemaps-preview](img/google/sitemaps-preview.png)
+![sitemaps-preview](/img/google/sitemaps-preview.png)
 
 3. 下载`sitemap.xml`文件并上传到网站根目录下
 
-![sitemaps-download](img/google/sitemaps-download.png)
+![sitemaps-download](/img/google/sitemaps-download.png)
 
 4. 在Google Search Console提交站点地图
 
+![sitemaps-upload](/img/google/sitemaps-upload.png)
 
+如果提交成功：
+
+![sitemaps-upload](/img/google/sitemaps-upload-success.png)
 
 ## 4.手动请求（重新索引）[👇](google-search#5最终效果展示)
 
+1. 将网站的地址再次输入到搜索框中
+
+![gsc-index](/img/google/gsc-index.png)
+
+2. 进入检索队列，1-2分钟后检索完成
+
+![gsc-success](/img/google/gsc-success.png)
+
 ## 5.最终效果展示[👇](google-search#6如果你和我一样使用docusaurus)
 
+最终就能达到在站点下搜索的功能了。随着网站的影响力不断增加，网站中的博客在Google搜索中的排名也会越来越靠前。
+
+![result](/img/google/result.png)
+
 ## 6.如果你和我一样使用[Docusaurus](https://v2.docusaurus.io)
+
+如果你和我一样使用[Docusaurus.v2](https://v2.docusaurus.io)做为个人网站，那么`sitemap.xml`的生成会更加简单，并且可以很轻松的接入`google-analytics`插件。
+
+1. 使用`@docusaurus/preset-classic`设置（推荐）
+
+    ``` javascript
+    // docusaurus.config.js
+    module.exports = {
+      presets: [
+        [
+            '@docusaurus/preset-classic',
+            {
+                googleAnalytics: {
+                    trackingID: 'UA-162317692-1',
+                },
+                gtag: {
+                    trackingID: 'UA-162317692-1',
+                },
+                sitemap: {
+                    cacheTime: 600 * 1000, // 600 sec - cache purge period
+                    changefreq: 'weekly',
+                    priority: 0.5,
+                },
+            },
+        ],
+    ],
+    ```
+
+2. 常规设置
+
+    1. sitemap
+
+    ```javascript
+    // docusaurus.config.js
+    module.exports = {
+    plugins: [
+        '@docusaurus/plugin-sitemap',
+        {
+        cacheTime: 600 * 1000, // 600 sec - cache purge period
+        changefreq: 'weekly',
+        priority: 0.5,
+        },
+    ],
+    };
+    ```
+
+    2. google-analytics
+
+    ``` javascript
+    // docusaurus.config.js
+    module.exports = {
+        plugins: ['@docusaurus/plugin-google-analytics'],
+        themeConfig: {
+            googleAnalytics: {
+            trackingID: 'UA-141789564-1',
+            // Optional fields.
+            anonymizeIP: true, // Should IPs be anonymized?
+            },
+        },
+    };
+    ```
 
 ### 推荐阅读
 
