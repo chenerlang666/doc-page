@@ -22,7 +22,7 @@ tags: [google, docusaurus]
 
 1. [查看网站是否被Google收录](google-search#1查看网站是否被google收录) （应该没有）
 2. [提交URL并验证所有权](google-search#2提交url并验证所有权)
-3. [添加Sitemaps给爬虫加个速](google-search#3添加Sitemaps给爬虫加个速)
+3. [添加Sitemaps给爬虫加个速](google-search#3添加sitemaps给爬虫加个速)
 4. [手动请求（重新索引）](google-search#4手动请求（重新索引）)
 5. [最终效果展示](google-search#5最终效果展示)
 6. [如果你和我一样使用Docusaurus](google-search#6如果你和我一样使用docusaurus)
