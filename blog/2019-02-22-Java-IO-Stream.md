@@ -56,88 +56,88 @@ tags: [java, IO]
     
 
 ``` java
-    private static void readByteFromFile(String fileName) throws IOException {
-        // Read from file byte by byte.
+private static void readByteFromFile(String fileName) throws IOException {
+    // Read from file byte by byte.
 
-        File file= new File(fileName);
-        byte[] byteArray= new byte[(int) file.length()];
-        InputStream is = new FileInputStream(file);
+    File file= new File(fileName);
+    byte[] byteArray= new byte[(int) file.length()];
+    InputStream is = new FileInputStream(file);
 
-        int size = is.read(byteArray);
+    int size = is.read(byteArray);
 
-        System.out.print(   "File size:\t" + size + " bytes\n" +
-                            "Content:\t" + new String(byteArray).substring(0, 5) + "...\n" +
-                            "Raw:\t\t");
+    System.out.print(   "File size:\t" + size + " bytes\n" +
+                        "Content:\t" + new String(byteArray).substring(0, 5) + "...\n" +
+                        "Raw:\t\t");
 
-        for (byte b: Arrays.copyOfRange(byteArray, 0, 5)) {
-            System.out.printf("%X", b); // hex value of a byte
-            System.out.print(",");
-        }
-        System.out.print("...\n");
-
-        System.out.println("Raw->char:\t" + new String(Arrays.copyOfRange(byteArray, 0, 3)));
-        // Pick up first three bytes and convert them to String.
-        // PS: A UTF-8 Chinese Character takes three bytes.
-
-        is.close();
-        System.out.println();
+    for (byte b: Arrays.copyOfRange(byteArray, 0, 5)) {
+        System.out.printf("%X", b); // hex value of a byte
+        System.out.print(",");
     }
-    ```
+    System.out.print("...\n");
+
+    System.out.println("Raw->char:\t" + new String(Arrays.copyOfRange(byteArray, 0, 3)));
+    // Pick up first three bytes and convert them to String.
+    // PS: A UTF-8 Chinese Character takes three bytes.
+
+    is.close();
+    System.out.println();
+}
+```
 
  2. Reader
 
     
 
 ``` java
-    private static void readCharFromFile(String fileName) throws IOException{
-        // Read from file char by char
+private static void readCharFromFile(String fileName) throws IOException{
+    // Read from file char by char
 
-        File file= new File(fileName);
-        Reader reader = new FileReader(file);
+    File file= new File(fileName);
+    Reader reader = new FileReader(file);
 
-        char [] charArray = new char[(int) file.length()];
-        int size = reader.read(charArray);
-        System.out.print(   "File size:\t" + size + " chars\n" +
-                            "Content:\t" + new String(charArray).substring(0, 5) + "...\n" +
-                            "Raw content:\t");
-        System.out.print(Arrays.copyOfRange(charArray, 0, 5));
+    char [] charArray = new char[(int) file.length()];
+    int size = reader.read(charArray);
+    System.out.print(   "File size:\t" + size + " chars\n" +
+                        "Content:\t" + new String(charArray).substring(0, 5) + "...\n" +
+                        "Raw content:\t");
+    System.out.print(Arrays.copyOfRange(charArray, 0, 5));
 
-        System.out.print("...");
-        reader.close();
-        System.out.println("\n");
-    }
-    ```
+    System.out.print("...");
+    reader.close();
+    System.out.println("\n");
+}
+```
 
  3.main(String args[])
 
     
 
 ``` java
-    public static void main(String[] args) {
-        String fileName = "src/流浪地球_utf8.txt";
-        long startTime = System.currentTimeMillis();
-        try{
-            readByteFromFile(fileName);
-            // readCharFromFile(fileName);
-        } catch (IOException e){
-            e.printStackTrace();
-        }
-        long endTime = System.currentTimeMillis();
-        long time = endTime - startTime;
-        System.out.println("-----------------------------------------------------------");
-        System.out.println("Time cost: " + time + "ms");
-        printMemoryInfo();
+public static void main(String[] args) {
+    String fileName = "src/流浪地球_utf8.txt";
+    long startTime = System.currentTimeMillis();
+    try{
+        readByteFromFile(fileName);
+        // readCharFromFile(fileName);
+    } catch (IOException e){
+        e.printStackTrace();
     }
+    long endTime = System.currentTimeMillis();
+    long time = endTime - startTime;
+    System.out.println("-----------------------------------------------------------");
+    System.out.println("Time cost: " + time + "ms");
+    printMemoryInfo();
+}
 
-    private static void printMemoryInfo(){
-        MemoryMXBean memoryMXBean = ManagementFactory.getMemoryMXBean();
-        System.out.println("-----------------------------------------------------------");
-        System.out.println("Memory cost:");
-        System.out.println("Heap memory used:" + memoryMXBean.getHeapMemoryUsage().getUsed()/1024/1024 + " MB");
-        System.out.println("Non Heap memory used:" + memoryMXBean.getNonHeapMemoryUsage().getUsed()/1024/1024 + " MB");
-        System.out.println("-----------------------------------------------------------");
-    }
-    ```
+private static void printMemoryInfo(){
+    MemoryMXBean memoryMXBean = ManagementFactory.getMemoryMXBean();
+    System.out.println("-----------------------------------------------------------");
+    System.out.println("Memory cost:");
+    System.out.println("Heap memory used:" + memoryMXBean.getHeapMemoryUsage().getUsed()/1024/1024 + " MB");
+    System.out.println("Non Heap memory used:" + memoryMXBean.getNonHeapMemoryUsage().getUsed()/1024/1024 + " MB");
+    System.out.println("-----------------------------------------------------------");
+}
+```
 
  In upper situation, InputStream and Reader use an array with enough size to read file content at once. The performance
  gap between them is not obvious.
@@ -148,9 +148,7 @@ tags: [java, IO]
 
  1. OutputStream
 
-    
-
-``` java
+    ``` java
     private static void writeByteToFile(String hello) throws IOException{
         byte[] byteArray = hello.getBytes();
         File file = new File("src/outputStream.txt");
@@ -163,9 +161,7 @@ tags: [java, IO]
 
  2. Writer
 
-    
-
-``` java
+    ``` java
     private static FileWriter writeCharToFile(String hello, Boolean flush) throws IOException {
         File file = new File("src/writer.txt");
         Writer os = new FileWriter(file);
@@ -179,9 +175,7 @@ tags: [java, IO]
 
  3.main(String args[])
 
-    
-
-``` java
+    ``` java
     public static void main(String args[]){
         String hello = "hello word!";
         //boolean flush = true;
@@ -229,9 +223,7 @@ tags: [java, IO]
 
  1. Buffered byte stream
 
-    
-
-``` java
+    ``` java
     private static void copyFileByByte(String fileName, boolean buffered) throws IOException {
         // Copy file byte by byte using byte IO stream.
         File file = new File(fileName);
@@ -256,9 +248,7 @@ tags: [java, IO]
 
  2. Buffered char stream
 
-    
-
-``` java
+    ``` java
     private static void copyFileByChar(String fileName, boolean buffered) throws IOException {
         // Copy file char by char using char IO stream.
         File file = new File(fileName);
@@ -289,11 +279,9 @@ tags: [java, IO]
     }
     ```
 
- 3.main(String args[])
+ 3. main(String args[])
 
-    
-
-``` java
+    ``` java
     public static void main(String[] args) {
         String fileName = "src/流浪地球_utf8.txt";
         boolean buffered = false;
@@ -312,7 +300,7 @@ tags: [java, IO]
         printMemoryInfo();
     }
 
-	private static void printMemoryInfo(){
+    private static void printMemoryInfo(){
         MemoryMXBean memoryMXBean = ManagementFactory.getMemoryMXBean();
         System.out.println("-----------------------------------------------------------");
         System.out.println("Memory cost:");
@@ -322,47 +310,45 @@ tags: [java, IO]
     }
     ```
 
- Output:
-
-    
+Output:
 
 ``` 
-    Non-buffered:
-    1 byte stream
-        -----------------------------------------------------------
-        Time cost: 4124ms
-        -----------------------------------------------------------
-        Memory cost:
-        Heap memory used:5 MB
-        Non Heap memory used:4 MB
-        -----------------------------------------------------------
-    2 char stream
-        -----------------------------------------------------------
-        Time cost: 88ms
-        -----------------------------------------------------------
-        Memory cost:
-        Heap memory used:30 MB
-        Non Heap memory used:5 MB
-        -----------------------------------------------------------
-    
-    Buffered:
-    1 byte stream
-        -----------------------------------------------------------
-        Time cost: 28ms
-        -----------------------------------------------------------
-        Memory cost:
-        Heap memory used:5 MB
-        Non Heap memory used:4 MB
-        -----------------------------------------------------------
-    2 char stream
-        -----------------------------------------------------------
-        Time cost: 31ms
-        -----------------------------------------------------------
-        Memory cost:
-        Heap memory used:5 MB
-        Non Heap memory used:4 MB
-        -----------------------------------------------------------
-    ```
+Non-buffered:
+1 byte stream
+    -----------------------------------------------------------
+    Time cost: 4124ms
+    -----------------------------------------------------------
+    Memory cost:
+    Heap memory used:5 MB
+    Non Heap memory used:4 MB
+    -----------------------------------------------------------
+2 char stream
+    -----------------------------------------------------------
+    Time cost: 88ms
+    -----------------------------------------------------------
+    Memory cost:
+    Heap memory used:30 MB
+    Non Heap memory used:5 MB
+    -----------------------------------------------------------
+
+Buffered:
+1 byte stream
+    -----------------------------------------------------------
+    Time cost: 28ms
+    -----------------------------------------------------------
+    Memory cost:
+    Heap memory used:5 MB
+    Non Heap memory used:4 MB
+    -----------------------------------------------------------
+2 char stream
+    -----------------------------------------------------------
+    Time cost: 31ms
+    -----------------------------------------------------------
+    Memory cost:
+    Heap memory used:5 MB
+    Non Heap memory used:4 MB
+    -----------------------------------------------------------
+```
 
  ### Stream convert
 

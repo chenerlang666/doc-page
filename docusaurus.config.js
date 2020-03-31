@@ -66,7 +66,7 @@ module.exports = {
               href: 'https://SUSTech-CANStudio.github.io',
             },
             {
-              label: 'Citric Acid Network Technology Co.,Ltd.',
+              label: 'CAN Tech Co.,Ltd.',
               href: 'https://SUSTech-CANStudio.github.io',
             }
           ],
@@ -96,9 +96,21 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
             'https://github.com/airine/home-page/edit/master/',
+          admonitions: {},
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
+        },
+        googleAnalytics: {
+          trackingID: 'UA-162317692-1',
+        },
+        gtag: {
+          trackingID: 'UA-162317692-1',
+        },
+        sitemap: {
+          cacheTime: 600 * 1000, // 600 sec - cache purge period
+          changefreq: 'weekly',
+          priority: 0.5,
         },
       },
     ],

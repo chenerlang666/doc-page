@@ -83,7 +83,7 @@ function Home() {
                 'button',
                 styles.getStarted,
               )}
-              to={useBaseUrl('docs/about')}>
+              to={'https://blog.aaron-xin.tech/about/'}>
               README
             </Link>
           </div>
