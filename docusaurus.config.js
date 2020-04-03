@@ -7,6 +7,12 @@ module.exports = {
   organizationName: 'Airine', // Usually your GitHub org/user name.
   projectName: 'Airine.github.io', // Usually your repo name.
   themeConfig: {
+    algolia: {
+      appId: 'GIOOKJ2CWG',
+      apiKey: 'a496900f7b7a6c841215541927378da2',
+      indexName: 'aaron-xin',
+      algoliaOptions: {},
+    },
     navbar: {
       logo: {
         alt: 'SUSTech CANStudio Logo',
@@ -84,6 +90,15 @@ module.exports = {
             }
           ],
         },
+        {
+          title: 'Links',
+          items: [
+            {
+              label: 'Samuel',
+              href: "https://hustergs.github.io"
+            }
+          ]
+        }
       ],
       copyright: `Copyright © ${new Date().getFullYear()} 一口闰心`,
     },
@@ -97,6 +112,12 @@ module.exports = {
           editUrl:
             'https://github.com/airine/home-page/edit/master/',
           admonitions: {},
+        },
+        blog: {
+          feedOptions: {
+            type: 'all',
+            copyright: `Copyright © ${new Date().getFullYear()} 一口闰心`,
+          },
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

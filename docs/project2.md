@@ -168,8 +168,11 @@ Format for each line in image input text file: `path\to\image img_idx`
 - Training examples derived from (https://github.com/vc1492a/Hey-Waldo)
 - [OpenCV's tutorial](https://docs.opencv.org/trunk/dc/d88/tutorial_traincascade.html)
 
+## Report
 
+import { Document, Page } from 'react-pdf';
 
+<Document file="/img/docs/A0161868R_A0209160N_A0155677N_report.pdf" />
 
 
 

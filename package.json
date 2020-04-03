@@ -10,8 +10,9 @@
   },
   "dependencies": {
     "@charlietango/use-script": "^2.1.0",
-    "@docusaurus/core": "^2.0.0-alpha.48",
+    "@docusaurus/core": "^2.0.0-alpha.50",
     "@docusaurus/preset-classic": "^2.0.0-alpha.48",
+    "@phuocng/react-pdf-viewer": "^1.4.0",
     "classnames": "^2.2.6",
     "gitalk": "^1.6.2",
     "react": "^16.8.4",
@@ -20,6 +21,7 @@
     "react-image": "^2.4.0",
     "react-load-script": "^0.0.6",
     "react-mail-form": "^2.1.0",
+    "react-pdf": "^4.1.0",
     "react-simple-image-slider": "^1.0.3"
   },
   "browserslist": {
