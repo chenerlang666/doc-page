@@ -6,7 +6,12 @@ module.exports = {
   favicon: 'img/favicon.ico',
   organizationName: 'Airine', // Usually your GitHub org/user name.
   projectName: 'Airine.github.io', // Usually your repo name.
+  plugins: ['@docusaurus/plugin-google-analytics'],
   themeConfig: {
+    googleAnalytics: {
+      trackingID: 'UA-162317692-1',
+      anonymizeIP: true,
+    },
     algolia: {
       appId: 'GIOOKJ2CWG',
       apiKey: 'a496900f7b7a6c841215541927378da2',
@@ -121,12 +126,6 @@ module.exports = {
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
-        },
-        googleAnalytics: {
-          trackingID: 'UA-162317692-1',
-        },
-        gtag: {
-          trackingID: 'UA-162317692-1',
         },
         sitemap: {
           cacheTime: 600 * 1000, // 600 sec - cache purge period
