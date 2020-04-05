@@ -42,7 +42,6 @@ function Hello() {
             padding:"50px",
             justifyContent: 'center',
             alignItems: 'center',
-            height: '50vh',
             fontSize: '20px',
             }}>
 
