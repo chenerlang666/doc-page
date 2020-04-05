@@ -50,7 +50,7 @@ module.exports = {
       ],
     },
     footer: {
-      style: 'dark',
+      style: 'light',
       links: [
         {
           title: 'Docs',
@@ -101,6 +101,10 @@ module.exports = {
             {
               label: 'Samuel',
               href: "https://hustergs.github.io"
+            },
+            {
+              label: 'Gallery (Tempt)',
+              to: 'gallery'
             }
           ]
         }
