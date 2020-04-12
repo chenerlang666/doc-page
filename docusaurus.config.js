@@ -20,7 +20,7 @@ module.exports = {
     },
     navbar: {
       logo: {
-        alt: 'SUSTech CANStudio Logo',
+        alt: 'My Logo',
         src: 'img/logo.svg',
         srcDark: 'img/logo_dark.svg'
       },
@@ -60,6 +60,10 @@ module.exports = {
               href: 'https://blog.aaron-xin.tech/about/',
             },
             {
+              label: 'Blog',
+              to: 'blog',
+            },
+            {
               label: 'Notion',
               href: 'https://www.notion.so/Notion-notes-41a54e26bd18461e87b6fabdfa26d43b',
             }
@@ -86,8 +90,12 @@ module.exports = {
           title: 'Social',
           items: [
             {
-              label: 'Blog',
-              to: 'blog',
+              label: 'Instagram',
+              href: 'https://www.instagram.com/airine0119/'
+            },
+            {
+              label: 'Facebook',
+              href: 'https://www.facebook.com/runxin.tian'
             },
             {
               label: 'GitHub',
@@ -105,6 +113,10 @@ module.exports = {
             {
               label: 'Gallery (Tempt)',
               to: 'gallery'
+            },
+            {
+              label: 'Tags',
+              to:'blog/tags'
             }
           ]
         }
@@ -123,6 +135,7 @@ module.exports = {
           admonitions: {},
         },
         blog: {
+          postsPerPage: 4,
           feedOptions: {
             type: 'all',
             copyright: `Copyright © ${new Date().getFullYear()} 一口闰心`,

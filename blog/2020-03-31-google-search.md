@@ -20,14 +20,14 @@ tags: [google, docusaurus]
 
 ### 步骤
 
-1. [查看网站是否被Google收录](google-search#1查看网站是否被google收录) （应该没有）
-2. [提交URL并验证所有权](google-search#2提交url并验证所有权)
-3. [添加Sitemaps给爬虫加个速](google-search#3添加sitemaps给爬虫加个速)
-4. [手动请求（重新索引）](google-search#4手动请求（重新索引）)
-5. [最终效果展示](google-search#5最终效果展示)
-6. [如果你和我一样使用Docusaurus](google-search#6如果你和我一样使用docusaurus)
+1. 查看网站是否被Google收录（应该没有）
+2. 提交URL并验证所有权
+3. 添加Sitemaps给爬虫加个速
+4. 手动请求（重新索引）
+5. 最终效果展示
+6. 如果你和我一样使用Docusaurus
 
-## 1.查看网站是否被Google收录[👇](google-search#2提交url并验证所有权)
+## 1.查看网站是否被Google收录
 
 查看网站是否被 _Google_ 收录很简单：打开[Google搜索](https://google.com)，在搜索框内输入
 
@@ -47,7 +47,7 @@ site:<your-websit-url> # site:blog.aaron-xin.tech
 
 恭喜你，你的网站已经被谷歌收录。但是出于可控考虑，你仍可以继续看下面的步骤，证明你的所有权以及提高Google对你的网站的检索效率。
 
-## 2.提交URL并验证所有权[👇](google-search#3添加sitemaps给爬虫加个速)
+## 2.提交URL并验证所有权
 
 可能你已经观察到了，无论有没有被Google收录，Google都会在第一条显示[Google Search Console](https://search.google.com/search-console?hl=zh-CN)。个人猜测，这是出于安全与隐私方面的考虑。Google把是否允许收录网站的权利交给真正的站主。
 
@@ -79,7 +79,7 @@ import Img from 'react-image'
 
 <Img src="/img/google/success_res.png" width="500"/>
 
-## 3.添加Sitemaps给爬虫加个速[👇](google-search#4手动请求（重新索引）)
+## 3.添加Sitemaps给爬虫加个速
 
 Sitemaps是什么？[站点地图](https://support.google.com/webmasters/answer/156184?hl=zh-Hans)(Site Map)是用来注明网站结构的文件，可以让搜索引擎的爬虫了解你的网站结构，以便于高效爬取内容，快速建立索引。Google 等搜索引擎会读取此文件，以便更加智能地抓取你的网站。站点地图会告诉 Google 你认为网站中的哪些网页和文件比较重要，还会提供与这些文件有关的重要信息：以网页为例，这些信息包括网页上次更新的时间、网页更改的频率，以及网页是否有其他语言版本。
 
@@ -128,7 +128,7 @@ Sitemaps是什么？[站点地图](https://support.google.com/webmasters/answer/
 
 ![sitemaps-upload](/img/google/sitemaps-upload-success.png)
 
-## 4.手动请求（重新索引）[👇](google-search#5最终效果展示)
+## 4.手动请求（重新索引）
 
 1. 将网站的地址再次输入到搜索框中
 
@@ -138,7 +138,7 @@ Sitemaps是什么？[站点地图](https://support.google.com/webmasters/answer/
 
 ![gsc-success](/img/google/gsc-success.png)
 
-## 5.最终效果展示[👇](google-search#6如果你和我一样使用docusaurus)
+## 5.最终效果展示
 
 最终就能达到在站点下搜索的功能了。随着网站的影响力不断增加，网站中的博客在Google搜索中的排名也会越来越靠前。
 
