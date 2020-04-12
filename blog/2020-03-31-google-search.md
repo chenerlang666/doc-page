@@ -209,7 +209,7 @@ Sitemaps是什么？[站点地图](https://support.google.com/webmasters/answer/
 
 ### 推荐阅读
 
-1. 如何在10分钟内用Docusaurus部署个人网站+博客
+1. [如何在10分钟内用Docusaurus部署个人网站+博客](/blog/home-page)
 2. 如何解决Docusaurus下gitalk无法加载评论的问题
 3. 如何为Docusaurus个人网站添加站内搜索
 4. [转-如何给Docusaurus添加Gitalk插件](/blog/gitalk)
