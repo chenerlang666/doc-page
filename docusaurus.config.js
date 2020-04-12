@@ -6,18 +6,18 @@ module.exports = {
   favicon: 'img/favicon.ico',
   organizationName: 'Airine', // Usually your GitHub org/user name.
   projectName: 'Airine.github.io', // Usually your repo name.
-  plugins: ['@docusaurus/plugin-google-analytics'],
+  // plugins: ['@docusaurus/plugin-google-analytics'],
   themeConfig: {
-    googleAnalytics: {
-      trackingID: 'UA-162317692-1',
-      anonymizeIP: true,
-    },
-    algolia: {
-      appId: 'GIOOKJ2CWG',
-      apiKey: 'a496900f7b7a6c841215541927378da2',
-      indexName: 'aaron-xin',
-      algoliaOptions: {},
-    },
+    // googleAnalytics: {
+    //   trackingID: 'UA-162317692-1',
+    //   anonymizeIP: true,
+    // },
+    // algolia: {
+    //   appId: 'GIOOKJ2CWG',
+    //   apiKey: 'a496900f7b7a6c841215541927378da2',
+    //   indexName: 'aaron-xin',
+    //   algoliaOptions: {},
+    // },
     navbar: {
       logo: {
         alt: 'My Logo',
@@ -26,7 +26,7 @@ module.exports = {
       },
       links: [
         {
-          to: 'docs/project1',
+          to: 'docs/style',
           activeBasePath: 'docs',
           label: 'Docs',
           position: 'left',
@@ -109,6 +109,10 @@ module.exports = {
             {
               label: 'Samuel',
               href: "https://hustergs.github.io"
+            },
+            {
+              label: '一口闰心',
+              href: "https://blog.aaron-xin.tech"
             },
             {
               label: 'Gallery (Tempt)',
