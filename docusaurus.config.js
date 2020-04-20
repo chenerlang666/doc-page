@@ -66,6 +66,10 @@ module.exports = {
             {
               label: 'Notion',
               href: 'https://www.notion.so/Notion-notes-41a54e26bd18461e87b6fabdfa26d43b',
+            },
+            {
+              label: 'Tags',
+              to:'blog/tags'
             }
           ],
         },
@@ -108,15 +112,11 @@ module.exports = {
           items: [
             {
               label: 'Samuel',
-              href: "https://hustergs.github.io"
+              href: 'https://hustergs.github.io'
             },
             {
-              label: 'Gallery (Tempt)',
-              to: 'gallery'
-            },
-            {
-              label: 'Tags',
-              to:'blog/tags'
+              label: 'Imgchr',
+              href: 'https://imgchr.com/album/tnSvn'
             }
           ]
         }

@@ -15,6 +15,7 @@
     "@phuocng/react-pdf-viewer": "^1.4.0",
     "classnames": "^2.2.6",
     "gitalk": "^1.6.2",
+    "markdown-it": "^10.0.0",
     "react": "^16.8.4",
     "react-avatar": "^3.9.2",
     "react-dom": "^16.8.4",
@@ -22,6 +23,7 @@
     "react-image": "^2.4.0",
     "react-load-script": "^0.0.6",
     "react-mail-form": "^2.1.0",
+    "react-markdown-editor-lite": "^1.0.2",
     "react-pdf": "^4.1.0",
     "react-simple-image-slider": "^1.0.3"
   },
