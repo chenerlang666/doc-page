@@ -6,7 +6,7 @@ author_title: Engineer @ CAN Studio
 author_url: https://github.com/airine
 author_image_url: https://avatars0.githubusercontent.com/u/21023948?s=400&u=e58fbc5dd11690f1bfa846950fd988017a24de81&v=4
 tags: [github, blog, docusaurus]
-draft: true
+draft: false
 ---
 
 一般来说，部署一个静态网站到[GitHub Pages]()需要以下步骤（Node.js）:
@@ -50,6 +50,8 @@ GitHub Actions 的配置文件叫做 workflow 文件，存放在代码仓库的`
 workflow 文件采用 `YAML` 格式，文件名可以任意取，但是后缀名统一为`.yml`，比如`foo.yml`。一个库可以有多个 workflow 文件。GitHub 只要发现`.github/workflows`目录里面有`.yml`文件，就会自动运行该文件。
 
 ## 获取GitHub Token
+
+...未完待续
 
 ## 推荐阅读
 
