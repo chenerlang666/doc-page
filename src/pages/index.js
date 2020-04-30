@@ -65,9 +65,9 @@ function Feature({imageUrl, title, description}) {
 function Home() {
   const context = useDocusaurusContext();
   const {siteConfig = {}} = context;
-  const myTitle = document.querySelector("#myname");
+  // const myTitle = document.querySelector("#myname");
   // const myTag = document.querySelector("#mytagline");
-  init(myTitle, { showCursor: false, strings: [siteConfig.title, "欢迎光临", siteConfig.title], backDelay: 1500, disableBackTyping: true, placeholder: false});
+  // init(myTitle, { showCursor: false, strings: [siteConfig.title, "欢迎光临", siteConfig.title], backDelay: 1500, disableBackTyping: true, placeholder: false});
   // init(myTag, { showCursor: false, strings: [siteConfig.tagline] });
   return (
     <Layout
@@ -76,12 +76,12 @@ function Home() {
       <header className={classnames('hero hero--primary', styles.heroBanner)}>
         <div className="container">
           <h1 aria-label="CodePen">
-            {/* {Array.from(siteConfig.title).map(char=>(
+            {Array.from(siteConfig.title).map(char=>(
               <span data-text={char} className="big--char">{char}</span>
-            ))} */}
-            <div id="myname" className="big--char" style={{
+            ))}
+            {/* <div id="myname" className="big--char" style={{
               minHeight: "120px"
-            }}></div>
+            }}></div> */}
 
           </h1>
           <p className={classnames('hero__subtitle neon')}>{siteConfig.tagline}</p>
