@@ -15,6 +15,7 @@
     "@phuocng/react-pdf-viewer": "^1.4.0",
     "classnames": "^2.2.6",
     "gitalk": "^1.6.2",
+    "ityped": "^1.0.3",
     "markdown-it": "^10.0.0",
     "react": "^16.8.4",
     "react-avatar": "^3.9.2",

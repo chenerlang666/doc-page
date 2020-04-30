@@ -6,6 +6,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
 import './style.css'
+import { init } from 'ityped'
 
 // TODO: To be modified.
 const features = [
@@ -64,16 +65,24 @@ function Feature({imageUrl, title, description}) {
 function Home() {
   const context = useDocusaurusContext();
   const {siteConfig = {}} = context;
+  const myTitle = document.querySelector("#myname");
+  // const myTag = document.querySelector("#mytagline");
+  init(myTitle, { showCursor: false, strings: [siteConfig.title, "欢迎光临", siteConfig.title], backDelay: 1500, disableBackTyping: true, placeholder: false});
+  // init(myTag, { showCursor: false, strings: [siteConfig.tagline] });
   return (
     <Layout
       title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      description="欢迎来到一口闰心的个人网站 - Welcome to 一口闰心's home">
       <header className={classnames('hero hero--primary', styles.heroBanner)}>
         <div className="container">
           <h1 aria-label="CodePen">
-            {Array.from(siteConfig.title).map(char=>(
+            {/* {Array.from(siteConfig.title).map(char=>(
               <span data-text={char} className="big--char">{char}</span>
-            ))}
+            ))} */}
+            <div id="myname" className="big--char" style={{
+              minHeight: "120px"
+            }}></div>
+
           </h1>
           <p className={classnames('hero__subtitle neon')}>{siteConfig.tagline}</p>
           

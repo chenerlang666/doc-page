@@ -25,13 +25,13 @@ module.exports = {
         srcDark: 'img/logo_dark.svg'
       },
       links: [
+        {to: 'blog', label: 'Blog', position: 'left'},
         {
           to: 'docs/project1',
           activeBasePath: 'docs',
           label: 'Docs',
           position: 'left',
         },
-        {to: 'blog', label: 'Blog', position: 'left'},
         {
           href: 'https://www.notion.so/Notion-notes-41a54e26bd18461e87b6fabdfa26d43b',
           label: 'Notion',
