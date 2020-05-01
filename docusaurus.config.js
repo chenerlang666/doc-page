@@ -74,23 +74,6 @@ module.exports = {
           ],
         },
         {
-          title: 'Organizations',
-          items: [
-            {
-              label: 'SUSTech',
-              href: 'https://www.sustech.edu.cn'
-            },
-            {
-              label: 'CAN Studio',
-              href: 'https://SUSTech-CANStudio.github.io',
-            },
-            {
-              label: 'CAN Tech Co.,Ltd.',
-              href: 'https://SUSTech-CANStudio.github.io',
-            }
-          ],
-        },
-        {
           title: 'Social',
           items: [
             {
@@ -117,6 +100,19 @@ module.exports = {
             {
               label: 'Imgchr',
               href: 'https://imgchr.com/album/tnSvn'
+            }
+          ]
+        },
+        {
+          title: 'Reading List',
+          items: [
+            {
+              label: 'Flutter 实战',
+              href: 'https://book.flutterchina.club/'
+            },
+            {
+              label: 'Go 语言',
+              href: 'https://chai2010.cn/advanced-go-programming-book/'
             }
           ]
         }
