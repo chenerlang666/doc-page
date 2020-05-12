@@ -9,7 +9,9 @@ tags: [flutter]
 draft: false
 ---
 ![JOp4BQ.png](https://s1.ax1x.com/2020/05/01/JOp4BQ.png)
+
 <!--truncate-->
+
 注：这篇文章基本上搬运了[官方文档](https://flutterchina.club/setup-macos/)，并根据搭建过程进行一些增减。
 
 ## 系统要求
@@ -102,4 +104,3 @@ Doctor summary (to see all details, run flutter doctor -v):
 ## Reference
 
 1. [入门: 在macOS上搭建Flutter开发环境](https://flutterchina.club/setup-macos/)
-2. 
