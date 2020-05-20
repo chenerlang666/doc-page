@@ -1,6 +1,6 @@
 module.exports = {
   title: '一口闰心',
-  tagline: 'A scientific programmer who dreams of becoming a great product manager.', // one sentence description
+  tagline: 'A research programmer who dreams of becoming a great product manager.', // one sentence description
   url: 'https://Airine.github.io',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
