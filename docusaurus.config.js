@@ -1,23 +1,23 @@
 module.exports = {
-  title: '一口闰心',
-  tagline: 'A research programmer who dreams of becoming a great product manager.', // one sentence description
-  url: 'https://Airine.github.io',
+  title: 'chenerlang666',
+  tagline: 'A scientific programmer who dreams of becoming a great product manager.', // one sentence description
+  url: 'https://chenerlang666.github.io',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
-  organizationName: 'Airine', // Usually your GitHub org/user name.
-  projectName: 'Airine.github.io', // Usually your repo name.
-  plugins: ['@docusaurus/plugin-google-analytics'],
+  organizationName: 'chenerlang666', // Usually your GitHub org/user name.
+  projectName: 'chenerlang666.github.io', // Usually your repo name.
+  // plugins: ['@docusaurus/plugin-google-analytics'],
   themeConfig: {
-    googleAnalytics: {
-      trackingID: 'UA-162317692-1',
-      anonymizeIP: true,
-    },
-    algolia: {
-      appId: 'GIOOKJ2CWG',
-      apiKey: 'a496900f7b7a6c841215541927378da2',
-      indexName: 'aaron-xin',
-      algoliaOptions: {},
-    },
+    // googleAnalytics: {
+    //   trackingID: 'UA-162317692-1',
+    //   anonymizeIP: true,
+    // },
+    // algolia: {
+    //   appId: 'GIOOKJ2CWG',
+    //   apiKey: 'a496900f7b7a6c841215541927378da2',
+    //   indexName: 'aaron-xin',
+    //   algoliaOptions: {},
+    // },
     navbar: {
       logo: {
         alt: 'My Logo',
@@ -27,7 +27,7 @@ module.exports = {
       links: [
         {to: 'blog', label: 'Blog', position: 'left'},
         {
-          to: 'docs/project1',
+          to: 'docs/style',
           activeBasePath: 'docs',
           label: 'Docs',
           position: 'left',
@@ -98,6 +98,7 @@ module.exports = {
               href: 'https://hustergs.github.io'
             },
             {
+<<<<<<< HEAD
               label: 'Imgchr',
               href: 'https://imgchr.com/album/tnSvn'
             }
@@ -109,6 +110,14 @@ module.exports = {
             {
               label: 'Flutter 实战',
               href: 'https://book.flutterchina.club/'
+=======
+              label: '一口闰心',
+              href: "https://blog.aaron-xin.tech"
+            },
+            {
+              label: 'Gallery (Tempt)',
+              to: 'gallery'
+>>>>>>> template
             },
             {
               label: 'Go 语言',

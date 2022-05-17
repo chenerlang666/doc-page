@@ -10,7 +10,7 @@ import React from 'react';
 import Layout from '@theme/Layout';
 import BlogPostItem from '@theme/BlogPostItem';
 import BlogPostPaginator from '@theme/BlogPostPaginator';
-import GitalkComment from '../GitalkComment';
+// import GitalkComment from '../GitalkComment';
 
 function BlogPostPage(props) {
   const {content: BlogPostContents} = props;
@@ -33,7 +33,7 @@ function BlogPostPage(props) {
                     nextItem={metadata.nextItem}
                     prevItem={metadata.prevItem}
                   />
-                  <GitalkComment />
+                  {/* <GitalkComment /> */}
                 </div>
               )}
             </div>
