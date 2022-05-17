@@ -1,11 +1,11 @@
 module.exports = {
-  title: '一口闰心',
+  title: 'chenerlang666',
   tagline: 'A scientific programmer who dreams of becoming a great product manager.', // one sentence description
-  url: 'https://Airine.github.io',
+  url: 'https://chenerlang666.github.io',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
-  organizationName: 'Airine', // Usually your GitHub org/user name.
-  projectName: 'Airine.github.io', // Usually your repo name.
+  organizationName: 'chenerlang666', // Usually your GitHub org/user name.
+  projectName: 'chenerlang666.github.io', // Usually your repo name.
   // plugins: ['@docusaurus/plugin-google-analytics'],
   themeConfig: {
     // googleAnalytics: {
